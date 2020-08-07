@@ -4,13 +4,16 @@
     align-items: center;
     height: 100%;
     flex-direction: column;
+    color: whitesmoke;
 }
 
 .hero-text {
     font-size: 3rem;
+    color: whitesmoke;
 }
 
 .content{
     display: flex;
     flex-direction: column;
+    color: whitesmoke;
 }
