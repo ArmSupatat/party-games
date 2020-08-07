@@ -1,0 +1,177 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.navbar{
+    width: 100%;
+    height: 80px;
+    background: rgba(8,3,37,.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+    position: fixed;
+}
+
+.logo{
+    text-align: center;
+    width: 500px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    color: #747FAE;
+}
+
+.icon-logo{
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/joystick.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pg{
+    margin-left: 10px;
+    padding: 5px 0 0 0;
+    text-align: left;
+    width: 200px;
+}
+
+h1{
+    text-align: left;
+    margin: 0;
+}
+
+.user{
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/icon-user.png);
+    background-size: cover;
+    background-color: #747FAE;
+    border-radius: 50px;
+}
+
+.rockman{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/rockman.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    font-size: 20px;
+    width: 600px;
+    height: 200px;
+    margin: 0 0 100px 130px;
+}
+
+.header{
+    font-size: 30px;
+    color: #B4CFD6;
+
+}
+
+.paragraph{
+    margin: 50px 0 0 0;
+}
+
+.paragraph button{
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    background-color: #4678B0;
+    border-radius: 20px;
+    outline: none;
+}
+
+.paragraph button:hover{
+    background-color: #1E3859;
+}
+
+p{
+    margin: 0;
+    color: #B4CFD6;
+}
+
+.post{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.warp{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.games{
+    /* width: 30%; */
+    margin: 25px;
+}
+
+.games-images{
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-image: url(../images/Games/ow.jpg); */
+}
+
+.games-details{
+    width: 300px;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.games-details p{
+    color: black;
+    padding: 5px 10px;
+}
+
+.games-details h3{
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.details-right{
+    width: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-right button{
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #57A4CC;
+    border-radius: 20px;
+    outline: none;
+}
+
+.details-right  button:hover{
+    background-color: #1C6082;
+}
