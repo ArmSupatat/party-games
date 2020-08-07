@@ -17,3 +17,13 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+//Route.on('/login').render('login')
+
+Route.get("/login", "AuthController.login");
+Route.post("/login", "Authcontroller.loginUser")
+
+Route.get("/register", "AuthController.register")
+Route.post("/register", "AuthController.registerUser")
+
+Route.post("/api/register", "AuthController.registerUser")
+
