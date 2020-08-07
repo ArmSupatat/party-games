@@ -1,0 +1,33 @@
+
+    @layout('layout')
+
+    @section("style-section")
+    {{style("css/container")}}
+    @endsection
+    
+
+    @section("content")
+    <div class="container">
+        <span class="hero-text">Register </span>
+        <form method="POST" action="{{route('/register')}}">
+            {{ csrfField() }}
+            <div class="content">
+            <label for ="email">Username</label>
+            <input type ="text" name="username" id="username">
+
+            <label for ="email">Email</label>
+            <input type ="text" name="email" id="email">
+
+            <label for ="username">Password</label>
+            <input type ="text" name="password" id="password">
+
+            <label for ="username">Confirm Password</label>
+            <input type ="text" name="comfirmPassword" id="comfirmPassword">
+
+            <button type ="submit">Submit</button>
+            </div> 
+        </form>
+        
+    </div>
+    @endsection
+    

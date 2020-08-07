@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {{style("css/reset")}}
+    @include("global-css")
+    @!section("style-section")
+    
+
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '303142207665764',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v8.0'
+          });
+            
+          FB.AppEvents.logPageView();   
+            
+        };
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+      </script>
+</head>
+<body>
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=303142207665764&autoLogAppEvents=1" nonce="JlHluIl5"></script>
+     @!section("content")
+
+     {{script("js/index")}}
+</body>
+</html>

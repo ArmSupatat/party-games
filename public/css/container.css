@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.hero-text {
+    font-size: 3rem;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
