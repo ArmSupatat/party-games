@@ -1,0 +1,38 @@
+@layer("layout")
+
+@section("style-section")
+    {{ style("css/login") }}
+    {{--  {{ style("css/reset") }}  --}}
+</head>
+<body>
+    <div class="container">
+    {{--  <span class="hero-text">Login {{ name }}</span>
+
+    @if(age >= 20)
+    <h1>You are adult</h1>
+    @else
+    <h1>You are young</h1>
+    @endif
+
+    <ul>
+    @each(supatat in supatat)
+    <li>{{ supatat }}</li>
+    @endeach
+    </ul>
+
+    <p>{{ address.postcode }}</p>  --}}
+    <form action="POST" action="{{ route('/login') }}">
+        {{ csrfField() }}
+
+        <label for="username">username</label>
+        <input type="text" name="username" id="username">
+
+        <label for="password">password</label>
+        <input type="password" name="password" id="password">
+
+        <button type="submit">Submit</button>
+    </form>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    {{ style("css/login") }}
+    {{ style("css/reset") }}
+</head>
+<body>
+    <div class="container">
+    <span class="hero-text">Login {{ name }}</span>
+
+    @if(age >= 20)
+    <h1>You are adult</h1>
+    @else
+    <h1>You are young</h1>
+    @endif
+
+    <ul>
+    @each(supatat in supatat)
+    <li>{{ supatat }}</li>
+    @endeach
+    </ul>
+
+    <p>{{ address.postcode }}</p>
+    
+    </div>
+</body>
+</html>
+</body>
+</html>
