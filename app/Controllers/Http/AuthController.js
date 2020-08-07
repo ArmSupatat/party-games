@@ -47,6 +47,10 @@ class AuthController {
 
         return response.redirect("/login")
     }
+
+    async home({ view }) {
+        return view.render("home")
+    }
 }
 
 

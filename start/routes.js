@@ -29,3 +29,6 @@ Route.post("/register", "AuthController.registerUser")
 
 Route.post("/api/register", "AuthController.registerUser")
 
+Route.get("/home", "AuthController.home")
+//Route.post("/register", "AuthController.registerUser")
+
