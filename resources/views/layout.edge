@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    {{style("css/home")}}
     {{style("css/reset")}}
     @include("global-css")
     @!section("style-section")
     
 
-    <script>
+    {{--  <script>
         window.fbAsyncInit = function() {
           FB.init({
             appId      : '303142207665764',
@@ -30,13 +30,34 @@
            js.src = "https://connect.facebook.net/en_US/sdk.js";
            fjs.parentNode.insertBefore(js, fjs);
          }(document, 'script', 'facebook-jssdk'));
-      </script>
+      </script>  --}}
 </head>
 <body>
-    <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=303142207665764&autoLogAppEvents=1" nonce="JlHluIl5"></script>
-     @!section("content")
+    {{--  <div id="fb-root"></div>  --}}
+{{--  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=303142207665764&autoLogAppEvents=1" nonce="JlHluIl5"></script>  --}}
 
      {{script("js/index")}}
+
+     <div class="navbar">
+      <div class="logo">
+          <a href="">
+              <div class="icon-logo">
+
+              </div>
+          </a>
+          <div class="pg">
+              <h1>Party Games</h1>
+          </div>
+      </div>
+
+      <div class="user">
+          <a href="login">
+              <img src="../images/icon-user.png" alt="" width="50px" height="50px">
+          </a>
+      </div>
+  </div>
+
+  @!section("content")
+
 </body>
 </html>
