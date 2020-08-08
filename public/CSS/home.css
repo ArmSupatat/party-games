@@ -105,7 +105,6 @@ p{
 
 .post{
     width: 100%;
-    height: 500px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -174,4 +173,16 @@ p{
 
 .details-right  button:hover{
     background-color: #1C6082;
+}
+
+.button{
+    width: 100%;
+    height: 100px;
+    text-align: right;
+}
+
+.button button{
+    width: 100px;
+    height: 50px;
+    background-color: blue;
 }
