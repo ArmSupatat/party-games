@@ -26,11 +26,25 @@ class AuthController {
         return view.render("login")
     }
 
-    loginUser({ request, response }) {
+    loginUser({ view, request, response }) {
         const { username, password } = request.body
-        
+        const users = [];
+
+        while (users = Database.select({username}).from("profiles")){
+            users = username;
+        }
+
+        const passwords = Database.select({password}).from("profiles")
         // return view.render("login")
-        return response.redirect("/login")
+        console.log("users")
+
+        // if(username===null||password===null){
+        //     return response.redirect("/login")
+        // } else if (username===users){
+        //         console.log("Yay")
+        //         return view.render("/home")
+        //     }
+        
     }
 
     register({ view }) {
