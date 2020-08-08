@@ -1,0 +1,28 @@
+@layout('my-layout')
+
+@section("style-section")
+{{style("css/login")}}
+@endsection
+
+
+@section("content")
+<div class="rockman">
+<div class="container">
+    <span class="hero-text">Register </span>
+    <form class="form" method="POST" action="{{route('/register')}}">
+        {{ csrfField() }}
+        <input  class="input" type ="text" name="username" id="username" placeholder="Username">
+
+        <input  class="input" type ="text" name="email" id="email" placeholder="Email">
+
+        <input  class="input" type ="text" name="password" id="password" placeholder="Password">
+
+        <input  class="input" type ="text" name="comfirmPassword" id="comfirmPassword" placeholder="Comfirm Password">
+
+        <div class="submit">
+        <button type ="submit">Submit</button>
+        </div> 
+    </form>
+</div>
+</div>
+@endsection
