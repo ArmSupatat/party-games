@@ -1,27 +1,25 @@
 @layout('my-layout')
 
-@section("style-section")    
-{{style("css/container")}}
+@section("style-section")
 {{style("css/login")}}
 @endsection
    
 
 @section("content")
 <div class="rockman">
-<div class="container">
-        <span class="hero-text">Login </span>
-        <div class="content">
-        <form method="POST" action="{{route('/login')}}">
+    <div class="container">
+        <span class="hero-text">Login</span>
+        <form class="form" method="POST" action="{{route('/login')}}">
             {{ csrfField() }}
             
-            <label for ="username">Username</label>
-            <input type ="text" name="username" id="username">
+            <input class="input" type ="text" name="username" id="username" placeholder="Username">
 
-            <label for ="username">Password</label>
-            <input type ="text" name="password" id="password">
+            <input class="input" type ="password" name="password" id="password" placeholder="Password">
 
-            <button type ="submit">Submit</button>
-
+            <div class="submit">
+                <button class="submit-login" type ="submit">Login</button>
+                <button class="submit-register" type ="button" onclick="window.location.href='http://127.0.0.1:8080/register';">Register</button>
+            </div>
             
         </form>
 
@@ -35,7 +33,6 @@
             data-width=""
             onlogin="checkLoginStatus();"
             >
-        </div>
         </div>
     </div>
 </div>
