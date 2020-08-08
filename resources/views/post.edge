@@ -1,0 +1,37 @@
+@layout('my-layout')
+
+@section("style-section")
+{{style("css/login")}}
+@endsection
+   
+
+@section("content")
+<div class="rockman">
+    <div class="container">
+        <span class="hero-text">Post</span>
+        <form class="form" method="POST" action="{{route('/post')}}">
+            {{ csrfField() }}
+            
+            <a for="img">Game</a>
+            <input class="input" type ="text" name="game" id="game" placeholder="What are you playing?">
+
+            <a for="img">Select image for your post</a>
+            <input class ="input" type="file" id="img" name="img" accept="image/*">
+
+            <a for="img">Details</a>
+            <input class="input" type ="text" name="details" id="details" placeholder="Tell people more about your party's game style">
+
+            <a for="img">Members</a>
+            <input class="input" type ="number" name="member" id="member" placeholder="The number of member you need">
+
+            <div class="submit">
+                <button class="submit-post" type ="submit">Post</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+    
+
+    </div>
+    @endsection

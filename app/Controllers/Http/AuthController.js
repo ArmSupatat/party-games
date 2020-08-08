@@ -65,6 +65,17 @@ class AuthController {
     async home({ view }) {
         return view.render("home")
     }
+
+    post ({view}){
+        return view.render("post")
+    }
+
+    async inputPost({request,response}){
+        const {game,details,member}= request.body
+        await Database.from("posts").insert({game,details,member})
+
+        return response.redirect("/home")
+    }
 }
 
 
