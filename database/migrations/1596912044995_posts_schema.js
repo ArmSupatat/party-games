@@ -18,6 +18,6 @@ class PostsSchema extends Schema {
   down () {
     this.drop('posts')
   }
-}
+}  
 
 module.exports = PostsSchema
