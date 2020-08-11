@@ -39,17 +39,25 @@ class AuthController {
         // const passwords = Database.select({password}).from("profiles")
         console.log("users")
 
-        if(userProfiles.length){
-            token += 1
+        if(userProfiles.length)
+        {
+            token = 1
             currentProfile = username
-            return response.redirect("/profile",{currentProfile})
+            return response.redirect("/profile")
         } else {
-                return response.redirect("/login")
-            }
+            token = 0
+            return response.redirect("/login")
+        }
     }
-
-    logOut({request, response}){  
-        token = 0
+    
+    profile ({view}) {
+        console.log(token)
+        token = 1
+        return view.render("profile",{currentProfile , token})
+    }
+    
+    logOut({response}){
+        token = 0  
         return response.redirect("/home",)
     }
 
@@ -104,15 +112,9 @@ class AuthController {
         return response.redirect("/details",{userProfiles})
     }
     
-
-    profile ({view}){
-        return view.render("profile",{currentProfile})
-    }
-
-
-    showProfile ({request,response}){
-        return response.redirect("/profile,",{currentProfile})
-    }
+    // showProfile ({request,response}){
+    //     return response.redirect("/profile,",{currentProfile})
+    // }
 
 }
 
