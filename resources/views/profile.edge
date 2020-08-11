@@ -11,24 +11,22 @@
         <form class="form" method="POST" action="{{route('/logout')}}">
             {{ csrfField() }}
             
+            
+    
+            @if(temp == 0)
+            <div class="submit">
+                <button class="submit-login" type ="button" onclick="window.location.href='login';">LOGIN</button>
+            </div>
+            @elseif(temp == 1)
             <a>Username</a>
-            {{currentProfile}}
+            <p>{{currentProfile}}</p>
 
             <a>Party you host</a>
 
             <a>Party you join</a>
-        </form>
-            
-
-
-        <form method="GET" action="{{'/profile'}}">
-            {{ csrfField() }}
-            @if(temp == 0)
-                {{route('/login')}}
-            @elseif(temp == 1)
-                    <p>{{currentProfile}}</p>
+                    
                 <div class="submit">
-                    <button class="submit-logout" type ="submit">Log Out</button>
+                    <button class="submit-logout" type ="submit">LOG OUT</button>
                 </div>
             @endif
         </form>
