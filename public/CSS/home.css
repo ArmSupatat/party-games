@@ -187,6 +187,10 @@ p{
     flex-direction: column;
 }
 
+.details-right h2{
+    color: black;
+}
+
 .details-right button{
     border: none;
     color: white;
