@@ -1,7 +1,7 @@
 'use strict'
 
 const Database = use("Database");
-let temp = 0
+let temp;
 let currentProfile;
 
 
@@ -40,16 +40,16 @@ class AuthController {
         console.log("users")
 
         if(userProfiles.length){
-            temp = 1
+            temp == 1
             currentProfile = username
-            return response.redirect("/profile")
+            return response.redirect("/profile",{currentProfile})
         } else {
                 return response.redirect("/login",{currentProfile})
             }
     }
 
     logOut({request, response}){  
-        temp = 0
+        temp == 0
         return response.redirect("/home",)
     }
 
@@ -92,7 +92,6 @@ class AuthController {
 
 
     showProfile ({request,response}){
-
         return response.redirect("/profile,",{currentProfile})
     }
 
