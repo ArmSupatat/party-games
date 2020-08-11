@@ -70,6 +70,11 @@ class AuthController {
 
         return response.redirect("/home")
     }
+
+    postDetails({view}){
+        return view.render("post-details")
+    }
+
 }
 
 
