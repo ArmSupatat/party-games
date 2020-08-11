@@ -60,13 +60,16 @@ class AuthController {
 
     async registerUser({ request, response }) {
         const {username,email,password}= request.body
+        if (username|email|password==null){
+        return response.redirect("/register") 
+        } else {
         console.log(email,password)
         await Database.from("profiles").insert({username,email,password})
         //await Database.insert({email,password}).into("profiles")
         //await =yield
         //async=*
 
-        return response.redirect("/login") 
+        return response.redirect("/login") }
     }
 
     post ({view}){
@@ -82,7 +85,7 @@ class AuthController {
         let mm = String(cm_Date.getMonth() + 1).padStart(2, '0'); //January is 0!
         let yyyy = date.getFullYear();
         date= mm + '/' + dd + '/' + yyyy;
-        
+
         await Database.from("posts").insert({game,details,member,date})
 
         return response.redirect("/home")
