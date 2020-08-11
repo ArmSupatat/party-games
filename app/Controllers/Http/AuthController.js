@@ -43,7 +43,7 @@ class AuthController {
         {
             token = 1
             currentProfile = username
-            return response.redirect("/profile")
+            return response.redirect("/profile",{token,username})
         } else {
             token = 0
             return response.redirect("/login")
@@ -51,14 +51,14 @@ class AuthController {
     }
     
     profile ({view}) {
-        console.log(token)
         token = 1
+        console.log(token)
         return view.render("profile",{currentProfile , token})
     }
     
     logOut({response}){
         token = 0  
-        return response.redirect("/home",)
+        return response.redirect("/home",{token})
     }
 
 
@@ -83,6 +83,8 @@ class AuthController {
     post ({view}){
         return view.render("post")
     }
+
+    postDetails
 
 
     async inputPost({request,response}){
