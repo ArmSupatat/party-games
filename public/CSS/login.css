@@ -39,6 +39,14 @@
     border:solid 1px gray;
 }
 
+.form .input-img{
+    margin: 10px 0;
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+}
+
 .form button{
     height: 30px;
     width: 100%;
@@ -73,9 +81,9 @@
     text-decoration: none;
 }
 
-.form .submit-login{
+/* .form .submit-login{
 
-}
+} */
 
 .form .submit-register{
     color: #57A4CC;

@@ -26,26 +26,20 @@ class AuthController {
         return view.render("login")
     }
 
-    loginUser({ view, request, response }) {
+    async loginUser({ view, request, response }) {
         const { username, password } = request.body
-        const users = [];
-
-        while (users = Database.select({username}).from("profiles")){
-            users = username;
-        }
-
-        const passwords = Database.select({password}).from("profiles")
-        // return view.render("login")
+        const userData = await Database.select("username", "password").from("profiles").where({ username, password }) // []
+        // const users = Database.select({username:username}).from("profiles");
+        // const passwords = Database.select({password}).from("profiles")
         console.log("users")
 
-        // if(username===null||password===null){
-        //     return response.redirect("/login")
-        // } else if (username===users){
-        //         console.log("Yay")
-        //         return view.render("/home")
-        //     }
-        
+        if(userData.length){
+            return response.redirect("/home")
+        } else {
+                return response.redirect("/login")
+            }
     }
+
 
     register({ view }) {
         return view.render("register")
@@ -59,11 +53,22 @@ class AuthController {
         //await =yield
         //async=*
 
-        return response.redirect("/login")
+        return response.redirect("/login") 
     }
 
     async home({ view }) {
         return view.render("home")
+    }
+
+    post ({view}){
+        return view.render("post")
+    }
+
+    async inputPost({request,response}){
+        const {game,details,member}= request.body
+        await Database.from("posts").insert({game,details,member})
+
+        return response.redirect("/home")
     }
 }
 

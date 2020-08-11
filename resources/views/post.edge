@@ -3,26 +3,32 @@
 @section("style-section")
 {{style("css/login")}}
 @endsection
-
+   
 
 @section("content")
 <div class="rockman">
-<div class="container">
-    <span class="hero-text">Register </span>
-    <form class="form" method="POST" action="{{route('/register')}}">
-        {{ csrfField() }}
-        <input  class="input" type ="text" name="username" id="username" placeholder="Username">
+    <div class="container">
+        <span class="hero-text">Post</span>
+        <form class="form" method="POST" action="{{route('/post')}}">
+            {{ csrfField() }}
+            
+            <a for="img">Game</a>
+            <input class="input" type ="text" name="game" id="game" placeholder="What are you playing?">
 
-        <input  class="input" type ="text" name="email" id="email" placeholder="Email">
+            <a for="img">Details</a>
+            <input class="input" type ="text" name="details" id="details" placeholder="Tell people more about your party's game style">
 
-        <input  class="input" type ="text" name="password" id="password" placeholder="Password">
+            <a for="img">Members</a>
+            <input class="input" type ="number" name="member" id="member" placeholder="The number of member you need">
 
-        <input  class="input" type ="text" name="comfirmPassword" id="comfirmPassword" placeholder="Comfirm Password">
-
-        <div class="submit">
-        <button type ="submit">Submit</button>
-        </div> 
-    </form>
+            <div class="submit">
+                <button class="submit-post" type ="submit">Post</button>
+            </div>
+            
+        </form>
+    </div>
 </div>
-</div>
-@endsection
+    
+
+    </div>
+    @endsection
