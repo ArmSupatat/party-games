@@ -42,9 +42,9 @@ class AuthController {
         if(userProfiles.length){
             temp = 1
             currentProfile = username
-            return response.redirect("/home")
+            return response.redirect("/profile")
         } else {
-                return response.redirect("/login")
+                return response.redirect("/login",{currentProfile})
             }
     }
 
