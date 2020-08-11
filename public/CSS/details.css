@@ -36,3 +36,23 @@
     align-items: flex-end;
     flex-direction: column;
 }
+
+.bottom button{
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #57A4CC;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.bottom button:hover{
+    background-color: #1E3859;
+}
