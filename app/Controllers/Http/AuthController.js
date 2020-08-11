@@ -1,7 +1,7 @@
 'use strict'
 
 const Database = use("Database");
-let temp;
+let temp = 0
 let currentProfile;
 
 
@@ -48,9 +48,9 @@ class AuthController {
             }
     }
 
-    logOut({request, response}){
+    logOut({request, response}){  
         temp = 0
-        return response.redirect("/home")
+        return response.redirect("/home",)
     }
 
 
@@ -84,6 +84,16 @@ class AuthController {
 
     details({view}){
         return view.render("details")
+    }
+
+    profile ({view}){
+        return view.render("profile",{currentProfile})
+    }
+
+
+    showProfile ({request,response}){
+
+        return response.redirect("/profile,",{currentProfile})
     }
 
 }
