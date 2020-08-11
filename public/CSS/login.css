@@ -66,7 +66,6 @@
 .submit{
     width: 100%;
     display: flex;
-    /* justify-content: right; */
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -79,10 +78,6 @@
     color: unset;
     text-decoration: none;
 }
-
-/* .form .submit-login{
-
-} */
 
 .form .submit-register{
     color: #57A4CC;
@@ -105,10 +100,9 @@
     justify-content: center;
 }
 
-/* .container{
-    height: 100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-} */
-
+.container textarea{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    height: 100px;
+}

@@ -63,6 +63,7 @@ h1{
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
+    justify-content: unset;
 }
 
 .title{
