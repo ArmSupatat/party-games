@@ -122,6 +122,11 @@ p{
     justify-content: center;
 }
 
+.warp a{
+    text-decoration: none;
+    color: black;
+}
+
 .games{
     /* width: 30%; */
     margin: 25px;
@@ -133,25 +138,29 @@ p{
     background-size: cover;
     background-repeat: no-repeat;
     /* background-image: url(../images/Games/ow.jpg); */
+    border-radius: 10px 10px 0 0;
 }
 
 .games-details{
     width: 300px;
-    height: 100px;
+    height: 110px;
     background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-radius: 0 0 10px 10px;
 }
 
 .games-details p{
     color: black;
     padding: 5px 10px;
+    color: gray;
 }
 
 .games-details h3{
     margin: 0;
     padding: 5px 10px;
+    color: #4678B0;
 }
 
 .games-details h2{

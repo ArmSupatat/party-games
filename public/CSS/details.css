@@ -5,20 +5,23 @@
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+    box-sizing: border-box;
+
 }
 
 .img-details{
     background-image: url(../images/Games/ow.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-y: 40px;
     border-radius: 20px 0 0 20px;
-    width: 50%;
+    width: 40%;
     height: 100%;
 }
 
 .details{
-    width: 50%;
-    height: 100%;
+    width: 60%;
+    font-size: 20px;
 }
 
 .details p{
@@ -26,15 +29,41 @@
 }
 
 .details .top{
-    height: 70%;
+    height: 60%;
+    padding: 30px 0 0 30px;
+    box-sizing: border-box;
+}
+
+.top h1{
+    color: #4678B0;
+}
+
+.top h3{
+    margin: 10px 0;
+}
+
+
+.top h5{
+    font-size: 15px;
+    margin: 10px 0;
+    color: gray;
+}
+
+.top p{
+    margin: 20px 0;
 }
 
 .details .bottom{
-    height: 30%;
+    height: 40%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     flex-direction: column;
+    padding-right: 50px;
+}
+
+.bottom h2{
+    margin: 0 35px 10px 0;
 }
 
 .bottom button{
