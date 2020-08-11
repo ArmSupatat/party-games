@@ -12,9 +12,11 @@
         <form class="form" method="POST" action="{{route('/login')}}">
             {{ csrfField() }}
             
-            <input class="input" type ="text" name="username" id="username" placeholder="Username">
+            <a for="username">Username</a>
+            <input class="input" type ="text" name="username" id="username" placeholder="e.g. JohnDoe">
 
-            <input class="input" type ="password" name="password" id="password" placeholder="Password">
+            <a for="password">Password</a>
+            <input class="input" type ="password" name="password" id="password" placeholder="********">
 
             <div class="submit">
                 <button class="submit-login" type ="submit">LOGIN</button>
