@@ -1,7 +1,7 @@
 'use strict'
 
 const Database = use("Database");
-let temp = 0
+let token;
 let currentProfile;
 
 
@@ -34,22 +34,22 @@ class AuthController {
 
     async loginUser({ view, request, response }) {
         const { username, password } = request.body
-        const userProfiles = await Database.select("username", "password").from("profiles").where({ username, password }) // []
+        const userProfiles = await Database.select("username", "password").from("profiles").where({ username:username, password:password }) // []
         // const users = Database.select({username:username}).from("profiles");
         // const passwords = Database.select({password}).from("profiles")
         console.log("users")
 
         if(userProfiles.length){
-            temp = 1
+            token += 1
             currentProfile = username
-            return response.redirect("/home")
+            return response.redirect("/profile",{currentProfile})
         } else {
                 return response.redirect("/login")
             }
     }
 
     logOut({request, response}){  
-        temp = 0
+        token = 0
         return response.redirect("/home",)
     }
 
@@ -69,15 +69,21 @@ class AuthController {
         return response.redirect("/login") 
     }
 
-    
-
     post ({view}){
         return view.render("post")
     }
 
+
     async inputPost({request,response}){
         const {game,details,member}= request.body
-        await Database.from("posts").insert({game,details,member})
+
+        let date = new Date();
+        let dd = String(cm_Date.getDate()).padStart(2, '0');
+        let mm = String(cm_Date.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = date.getFullYear();
+        date= mm + '/' + dd + '/' + yyyy;
+        
+        await Database.from("posts").insert({game,details,member,date})
 
         return response.redirect("/home")
     }
@@ -86,13 +92,22 @@ class AuthController {
         return view.render("details")
     }
 
+    testPost(){
+
+    }
+
+    async postDetails({response}){
+        const posts = await Database.select("game", "details","member").from("posts")
+        return response.redirect("/details",{userProfiles})
+    }
+    
+
     profile ({view}){
         return view.render("profile",{currentProfile})
     }
 
 
     showProfile ({request,response}){
-
         return response.redirect("/profile,",{currentProfile})
     }
 

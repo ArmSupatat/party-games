@@ -36,7 +36,7 @@ Route.get("/post", "AuthController.post")
 Route.post("/post", "AuthController.inputPost")
 
 Route.get("/details", "AuthController.details")
-Route.post("/details", "AuthController.details")
+Route.post("/details", "AuthController.postDetails")
 
 Route.get("/profile", "AuthController.profile")
 // Route.get("/profile", "AuthController.logOut")
