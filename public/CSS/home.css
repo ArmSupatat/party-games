@@ -116,6 +116,12 @@ p{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    padding: 0 30px;
+}
+
+.post a{
+    text-decoration: none;
 }
 
 .warp{
