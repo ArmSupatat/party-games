@@ -41,4 +41,3 @@ Route.post("/details", "AuthController.postDetails")
 Route.get("/profile", "AuthController.profile")
 // Route.get("/profile", "AuthController.logOut")
 Route.post("/profile", "AuthController.showProfile")
-
