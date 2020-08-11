@@ -48,10 +48,12 @@
     color: white;
     font-size: 16px;
     outline: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .form button:hover{
-    background-color: #ffcb3b;
+    background-color: #1E3859;
 }
 
 .submit{
@@ -81,7 +83,7 @@
 }
 
 .form .submit-register:hover{
-    background-color: #ffcb3b;
+    background-color: gray;
 }
 
 .rockman{

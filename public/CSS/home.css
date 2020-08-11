@@ -89,15 +89,16 @@ h1{
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
-    margin: 10px 0;
+    margin: 20px 0;
     cursor: pointer;
     background-color: #4678B0;
     border-radius: 20px;
     outline: none;
+    cursor: pointer;
 }
 
 .paragraph button:hover{
-    background-color: #ffcb3b;
+    background-color: #1E3859;
 }
 
 p{
@@ -135,10 +136,11 @@ p{
 
 .games-details{
     width: 300px;
-    height: 70px;
+    height: 100px;
     background-color: white;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .games-details p{
@@ -151,11 +153,17 @@ p{
     padding: 5px 10px;
 }
 
+.games-details h2{
+    margin: 0;
+    padding: 5px 0;
+}
+
 .details-right{
-    width: 190px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .details-right button{
@@ -171,8 +179,9 @@ p{
     background-color: #57A4CC;
     border-radius: 20px;
     outline: none;
+    cursor: pointer;
 }
 
 .details-right  button:hover{
-    background-color: #ffcb3b;
+    background-color: #1E3859;
 }
