@@ -69,8 +69,6 @@ class AuthController {
         return response.redirect("/login") 
     }
 
-    
-
     post ({view}){
         return view.render("post")
     }
@@ -78,7 +76,14 @@ class AuthController {
 
     async inputPost({request,response}){
         const {game,details,member}= request.body
-        await Database.from("posts").insert({game,details,member})
+
+        let date = new Date();
+        let dd = String(cm_Date.getDate()).padStart(2, '0');
+        let mm = String(cm_Date.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = date.getFullYear();
+        date= mm + '/' + dd + '/' + yyyy;
+        
+        await Database.from("posts").insert({game,details,member,date})
 
         return response.redirect("/home")
     }

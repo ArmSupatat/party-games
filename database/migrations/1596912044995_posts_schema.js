@@ -8,9 +8,9 @@ class PostsSchema extends Schema {
     this.create('posts', (table) => {
       table.increments()
       table.string("game",80).notNullable()
-      
       table.string("details",254).notNullable()
       table.integer("member",60).notNullable()
+      table.string("date")
       table.timestamps()
     })
   }
@@ -18,6 +18,8 @@ class PostsSchema extends Schema {
   down () {
     this.drop('posts')
   }
-}  
+}
+
+
 
 module.exports = PostsSchema
