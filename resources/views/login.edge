@@ -1,4 +1,4 @@
-@layout('my-layout')
+@layout('layout2')
 
 @section("style-section")
 {{style("css/login")}}
@@ -17,8 +17,8 @@
             <input class="input" type ="password" name="password" id="password" placeholder="Password">
 
             <div class="submit">
-                <button class="submit-login" type ="submit">Login</button>
-                <button class="submit-register" type ="button" onclick="window.location.href='register';">Register</button>
+                <button class="submit-login" type ="submit">LOGIN</button>
+                <button class="submit-register" type ="button" onclick="window.location.href='register';">REGISTER</button>
             </div>
             
         </form>
@@ -36,7 +36,5 @@
         </div>
     </div>
 </div>
-    
 
-    </div>
     @endsection

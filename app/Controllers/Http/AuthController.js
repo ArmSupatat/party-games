@@ -81,6 +81,11 @@ class AuthController {
 
         return response.redirect("/home")
     }
+
+    details({view}){
+        return view.render("details")
+    }
+
 }
 
 
