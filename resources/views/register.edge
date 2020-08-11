@@ -11,13 +11,18 @@
         <span class="hero-text">Register </span>
         <form class="form" method="POST" action="{{route('/register')}}">
             {{ csrfField() }}
+
+            <a for="username">Username</a>
             <input  class="input" type ="text" name="username" id="username" placeholder="e.g. JohnDoe">
 
+            <a for="email">Email</a>
             <input  class="input" type ="text" name="email" id="email" placeholder="e.g. JohnDoe@example.com">
 
+            <a for="password">Password</a>
             <input  class="input" type ="text" name="password" id="password" placeholder="********">
 
-            <input  class="input" type ="text" name="comfirmPassword" id="comfirmPassword" placeholder="Comfirm Password">
+            <a for="confirmPassword">Confirm Password</a>
+            <input  class="input" type ="text" name="comfirmPassword" id="comfirmPassword" placeholder="********">
 
             <div class="submit">
             <button type ="submit">SUBMIT</button>
