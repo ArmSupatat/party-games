@@ -1,7 +1,7 @@
 'use strict'
 
 const Database = use("Database");
-let temp;
+let token;
 let currentProfile;
 
 
@@ -34,22 +34,22 @@ class AuthController {
 
     async loginUser({ view, request, response }) {
         const { username, password } = request.body
-        const userProfiles = await Database.select("username", "password").from("profiles").where({ username, password }) // []
+        const userProfiles = await Database.select("username", "password").from("profiles").where({ username:username, password:password }) // []
         // const users = Database.select({username:username}).from("profiles");
         // const passwords = Database.select({password}).from("profiles")
         console.log("users")
 
         if(userProfiles.length){
-            temp == 1
+            token += 1
             currentProfile = username
             return response.redirect("/profile",{currentProfile})
         } else {
-                return response.redirect("/login",{currentProfile})
+                return response.redirect("/login")
             }
     }
 
     logOut({request, response}){  
-        temp == 0
+        token = 0
         return response.redirect("/home",)
     }
 
@@ -75,6 +75,7 @@ class AuthController {
         return view.render("post")
     }
 
+
     async inputPost({request,response}){
         const {game,details,member}= request.body
         await Database.from("posts").insert({game,details,member})
@@ -85,6 +86,16 @@ class AuthController {
     details({view}){
         return view.render("details")
     }
+
+    testPost(){
+
+    }
+
+    async postDetails({response}){
+        const posts = await Database.select("game", "details","member").from("posts")
+        return response.redirect("/details",{userProfiles})
+    }
+    
 
     profile ({view}){
         return view.render("profile",{currentProfile})
