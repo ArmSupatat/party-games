@@ -1,11 +1,10 @@
-    @layout('layout2')
+@layout('layout2')
 
-    @section("style-section")
-    {{style("css/login")}}
-    @endsection
+@section("style-section")
+@endsection
     
 
-    @section("content")
+@section("content")
 <div class="rockman">
     <div class="container">
         <span class="hero-text">Register </span>
@@ -19,10 +18,10 @@
             <input  class="input" type ="text" name="email" id="email" placeholder="e.g. JohnDoe@example.com">
 
             <a for="password">Password</a>
-            <input  class="input" type ="text" name="password" id="password" placeholder="********">
+            <input  class="input" type ="password" name="password" id="password" placeholder="********">
 
             <a for="confirmPassword">Confirm Password</a>
-            <input  class="input" type ="text" name="comfirmPassword" id="comfirmPassword" placeholder="********">
+            <input  class="input" type ="password" name="comfirmPassword" id="comfirmPassword" placeholder="********">
 
             <div class="submit">
             <button type ="submit">SUBMIT</button>

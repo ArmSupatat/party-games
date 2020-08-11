@@ -1,7 +1,6 @@
 @layout('layout2')
 
 @section("style-section")
-{{style("css/login")}}
 @endsection
    
 
@@ -16,7 +15,7 @@
             <input class="input" type ="text" name="game" id="game" placeholder="What are you playing?">
 
             <a for="details">Details</a>
-            <input class="input" type ="text" name="details" id="details" placeholder="Tell people more about your party's game style">
+            <textarea name="details" id="details" cols="30" rows="10" placeholder="Tell people more about your party's game style"></textarea>
 
             <a for="member">Members</a>
             <input class="input" type ="number" name="member" id="member" placeholder="The number of member you need">
