@@ -1,0 +1,38 @@
+.box-details{
+    height: 500px;
+    width: 1000px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.img-details{
+    background-image: url(../images/Games/ow.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px 0 0 20px;
+    width: 50%;
+    height: 100%;
+}
+
+.details{
+    width: 50%;
+    height: 100%;
+}
+
+.details p{
+    color: black;
+}
+
+.details .top{
+    height: 70%;
+}
+
+.details .bottom{
+    height: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
