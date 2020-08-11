@@ -1,8 +1,8 @@
 'use strict'
 
 const Database = use("Database");
-const temp;
-const currentProfile;
+let temp;
+let currentProfile;
 
 
 class AuthController {
