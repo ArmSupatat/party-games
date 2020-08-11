@@ -1,6 +1,9 @@
 'use strict'
 
 const Database = use("Database");
+const temp;
+const currentProfile;
+
 
 class AuthController {
     //async login({view, request, response}) {
@@ -21,6 +24,9 @@ class AuthController {
     //     return view.render("login"//, {name,age,friends,address}
     //     )
     // }
+    async home({ view }) {
+        return view.render("home")
+    }
 
     async login({ view }) {
         return view.render("login")
@@ -28,16 +34,23 @@ class AuthController {
 
     async loginUser({ view, request, response }) {
         const { username, password } = request.body
-        const userData = await Database.select("username", "password").from("profiles").where({ username, password }) // []
+        const userProfiles = await Database.select("username", "password").from("profiles").where({ username, password }) // []
         // const users = Database.select({username:username}).from("profiles");
         // const passwords = Database.select({password}).from("profiles")
         console.log("users")
 
-        if(userData.length){
+        if(userProfiles.length){
+            temp = 1
+            currentProfile = username
             return response.redirect("/home")
         } else {
                 return response.redirect("/login")
             }
+    }
+
+    logOut({request, response}){
+        temp = 0
+        return response.redirect("/home")
     }
 
 
@@ -56,9 +69,7 @@ class AuthController {
         return response.redirect("/login") 
     }
 
-    async home({ view }) {
-        return view.render("home")
-    }
+    
 
     post ({view}){
         return view.render("post")
