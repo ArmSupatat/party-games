@@ -1,0 +1,28 @@
+@layout('layout2')
+
+@section("style-section")
+{{style("css/login")}}
+@endsection
+
+@section("content")
+<div class="rockman">
+    <div class="container">
+        <span class="hero-text">Profile</span>
+        <form class="form" method="POST" action="{{route('/post')}}">
+            {{ csrfField() }}
+            
+            <a>Username</a>
+
+            <a>Party you host</a>
+
+            <a>Party you join</a>
+        
+            <div class="submit">
+                <button class="submit-post" type ="submit">Log Out</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+@endsection
