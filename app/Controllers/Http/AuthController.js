@@ -111,7 +111,7 @@ class AuthController {
 
     async postDetails({response}){
         const posts = await Database.select("game", "details","member").from("posts")
-        return response.redirect("/details",{userProfiles})
+        return response.redirect("/details",{posts})
     }
     
     // showProfile ({request,response}){
