@@ -4,8 +4,8 @@ const Database = use("Database");
 let token;
 let currentProfile;
 
-
 class AuthController {
+    
     //async login({view, request, response}) {
     // const users = await Database
     // //.select("*")
@@ -37,7 +37,7 @@ class AuthController {
         const userProfiles = await Database.select("username", "password").from("profiles").where({ username:username, password:password }) // []
         // const users = Database.select({username:username}).from("profiles");
         // const passwords = Database.select({password}).from("profiles")
-        console.log("users")
+
 
         if(userProfiles.length)
         {
@@ -88,16 +88,90 @@ class AuthController {
 
 
     async inputPost({request,response}){
-        const {game,details,member}= request.body
+        const {game,details,member,timeStamp}= request.body
 
-        let date = new Date();
-        let dd = String(cm_Date.getDate()).padStart(2, '0');
-        let mm = String(cm_Date.getMonth() + 1).padStart(2, '0'); //January is 0!
-        let yyyy = date.getFullYear();
-        date= mm + '/' + dd + '/' + yyyy;
+    //     let now = new Date(),
+    //     secondsPast = (now.getTime() - timeStamp) / 1000;
+    //     let date;
 
-        await Database.from("posts").insert({game,details,member,date})
+    //   if (secondsPast < 60) {
+    //     date= parseInt(secondsPast) + 's';
+    //   }
+    //   if (secondsPast < 3600) {
+    //     date= parseInt(secondsPast / 60) + 'm';
+    //   }
+    //   if (secondsPast <= 86400) {
+    //     date= parseInt(secondsPast / 3600) + 'h';
+    //   }
+    //   if (secondsPast > 86400) {
+    //     day = timeStamp.getDate();
+    //     month = timeStamp.toDateString().match(/ [a-zA-Z]*/)[0].replace(" ", "");
+    //     year = timeStamp.getFullYear() == now.getFullYear() ? "" : " " + timeStamp.getFullYear();
+    //     date= day + " " + month + year;
+    //   }
 
+    //   const currentTimeStamp = new Date().getTime();
+
+      //------------------------------------------------//
+
+        let dateString = new Date();
+        let dd = String(dateString.getDate()).padStart(2, '0');
+        let mm = String(dateString.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = dateString.getFullYear();
+        dateString= mm + '/' + dd + '/' + yyyy;
+
+        //---------------------------------------//
+
+        // var rightNow = new Date();
+        // var then = new Date(dateString);
+
+        // if ($.browser.msie) {
+        //     // IE can't parse these crazy Ruby dates
+        //     then = Date.parse(dateString.replace(/( \+)/, ' UTC$1'));
+        // }
+
+        // let diff = rightNow - then;
+        // let date;
+
+        // let second = 1000,
+        // minute = second * 60,
+        // hour = minute * 60,
+        // day = hour * 24,
+        // week = day * 7;
+
+        // if (isNaN(diff) || diff < 0) {
+        //     date = ""; // return blank string if unknown
+        // }
+        // if (diff < second * 2) {
+        //     // within 2 seconds
+        //     date = "right now";
+        // }
+        // if (diff < minute) {
+        //     date= Math.floor(diff / second) + " seconds ago";
+        // }
+        // if (diff < minute * 2) {
+        //     date= "about 1 minute ago";
+        // }
+        // if (diff < hour) {
+        //     date= Math.floor(diff / minute) + " minutes ago";
+        // }
+        // if (diff < hour * 2) {
+        //     date ="about 1 hour ago";
+        // }
+        // if (diff < day) {             
+        //     date = Math.floor(diff / hour) + " hours ago";         
+        // }           
+        // if (diff > day && diff < day * 2) {
+        //     date ="yesterday";
+        // }
+        // if (diff < day * 365) {
+        //     date =Math.floor(diff / day) + " days ago";
+        // }
+        // else {
+        //     date= "over a year ago";
+        // }
+
+        await Database.from("posts").insert({game,details,member,date:dateString})
         return response.redirect("/home")
     }
 
@@ -105,20 +179,21 @@ class AuthController {
         return view.render("details")
     }
 
-    testPost(){
-
-    }
-
     async postDetails({response}){
-        const posts = await Database.select("game", "details","member").from("posts")
-        return response.redirect("/details",{posts})
+        // let id = 1;
+        const {game,details,member} = await Database.select('game','details','member').from("posts").where({game:Minecraft})
+        return response.redirect("/details",{game,details,member})
     }
+
+}
     
     // showProfile ({request,response}){
     //     return response.redirect("/profile,",{currentProfile})
     // }
+    // let game;
+    // let details;
+    // let member;
 
-}
-
+    // console.log(game)
 
 module.exports = AuthController

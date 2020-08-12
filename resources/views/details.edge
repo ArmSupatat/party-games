@@ -13,15 +13,18 @@
         </div>
         <div class="details">
             <div class="top">
-                <h1>Overwatch</h1>
+                {{--  @each(details in game)  --}}
+                <h1>{{details.game}}</h1>
                 <h3>Arm Supatat</h3>
-                <h5>โพสต์เมื่อ 30 นาทีที่แล้ว</h5>
-                <p>หาคนเล่นด้วยครับ เล่นแล้วไม่ร้อน หญิงชายก็ได้ มี Discord ให้</p>
+                
+                <h5>{{deails.date}}</h5>
+                <p>{{details.details}}</p>
             </div>
             <div class="bottom">
-                <h2>0/5</h2>
+                <h2>0/{{details.member}}</h2>
                 <button>JOIN</button>
             </div>
+            {{--  @endeach  --}}
 
         </div>
 
