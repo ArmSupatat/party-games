@@ -10,6 +10,7 @@ class PostsSchema extends Schema {
       table.string("game",80).notNullable()
       table.string("details",254).notNullable()
       table.integer("member",60).notNullable()
+      table.integer("joined_member",60)
       table.string("date")
       table.timestamps()
     })
