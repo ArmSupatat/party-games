@@ -180,7 +180,7 @@ class AuthController {
     }
 
     async details({view}){
-        const id = 1;
+        const id = 5;
         const data = await Database.select('game','details','date','member').from('posts').where({id}).first()
         console.log(data);
         return view.render("details", { game, details, date, member })
@@ -205,5 +205,4 @@ class AuthController {
     // let member;
 
     // console.log(game)
-console.log(details)
 module.exports = AuthController
