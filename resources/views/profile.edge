@@ -8,16 +8,14 @@
 <div class="rockman">
     <div class="container">
         <span class="hero-text">Profile</span>
-        <form class="form" method="POST" action="{{route('/logout')}}">
+        <form class="form" method="POST" action="{{route('/profile')}}">
             {{ csrfField() }}
-            
-            
     
             @if(token == 0)
             <div class="submit">
                 <button class="submit-login" type ="button" onclick="window.location.href='login';">LOGIN</button>
             </div>
-            @elseif(token == 1)
+            @else
             <a>Username</a>
             <p>{{currentProfile}}</p>
 
