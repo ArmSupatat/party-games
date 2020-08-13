@@ -179,13 +179,14 @@ class AuthController {
         return response.redirect("/home")
     }
 
-    details({view}){
-        return view.render("details")
+    async details({view}){
+        const id = 1;
+        const data = await Database.select('game','details','date','member').from('posts').where({id}).first()
+        console.log(data);
+        return view.render("details", { game, details, date, member })
     }
 
     async postDetails({response}){
-        let id = 1;
-        const {game,details,date,member} = await Database.select('game','details','date','member').from("posts").where({id})
         // game = data[0].game;
         // details = data[0].details;
         // date = data[0].date;
