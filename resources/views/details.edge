@@ -10,23 +10,24 @@
     <div class="box-details">
         <div class="img-details">
 
-        </div>
+        </div>{{--  @each(details in game)  --}}
         <div class="details">
             <div class="top">
-                {{--  @each(details in game)  --}}
-                <h1>{{details.game}}</h1>
+                
+                <h1>{{game.game}}</h1>
                 <h3>Arm Supatat</h3>
                 
                 <h5>{{deails.date}}</h5>
                 <p>{{details.details}}</p>
             </div>
             <div class="bottom">
-                <h2>0/{{details.member}}</h2>
+                <h2>0/{{member.member}}</h2>
                 <button>JOIN</button>
             </div>
-            {{--  @endeach  --}}
+            
 
         </div>
+        {{--  @endeach  --}}
 
     </div>
 </div>

@@ -3,6 +3,10 @@
 const Database = use("Database");
 let token;
 let currentProfile;
+let game;
+let details;
+let date;
+let member;
 
 class AuthController {
     
@@ -180,9 +184,14 @@ class AuthController {
     }
 
     async postDetails({response}){
-        // let id = 1;
-        const {game,details,member} = await Database.select('game','details','member').from("posts").where({game:Minecraft})
-        return response.redirect("/details",{game,details,member})
+        let id = 1;
+        const {game,details,date,member} = await Database.select('game','details','date','member').from("posts").where({id})
+        // game = data[0].game;
+        // details = data[0].details;
+        // date = data[0].date;
+        // member = data[0].member;
+
+        return response.redirect("/details",{game,details,date,member})
     }
 
 }
@@ -195,5 +204,5 @@ class AuthController {
     // let member;
 
     // console.log(game)
-
+console.log(details)
 module.exports = AuthController
